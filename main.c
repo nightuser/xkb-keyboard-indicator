@@ -6,15 +6,9 @@
 
 AppIndicator * indicator;
 XklConfigRec * config_rec;
+GSettings * settings;
 gulong xkb_state_changed_handler;
 gulong xkb_config_changed_handler;
-
-/*
-HARDCODED
-extract it from settings
-*/
-gchar * layouts_str = "us,fr,ru";
-gchar * options_str = "grp:caps_toggle,grp_led:scroll,compose:menu";
 
 void
 update_icon (XklEngine * engine, gint group);
@@ -71,12 +65,14 @@ update_icon (XklEngine * engine, gint group)
 void
 reset_settings (XklEngine * engine)
 {
-  gchar ** settings_layouts = g_strsplit (layouts_str, ",", -1);
+  gchar ** settings_layouts = g_settings_get_strv (settings, "layouts");
   xkl_config_rec_set_layouts (config_rec, (gchar const **) settings_layouts);
   g_free (settings_layouts);
-  gchar ** settings_options = g_strsplit (options_str, ",", -1);
+
+  gchar ** settings_options = g_settings_get_strv (settings, "options");
   xkl_config_rec_set_options (config_rec, (gchar const **) settings_options);
   g_free (settings_options);
+
   xkl_config_rec_activate (config_rec, engine);
 }
 
@@ -158,6 +154,7 @@ main (int argc, char ** argv)
   xkl_config_rec_get_from_server (config_rec, engine);
 
   /* Set settings values */
+  settings = g_settings_new ("apps.xki");
   reset_settings (engine);
 
   /* Start listen */
