@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/ru/nightuser/xki">
     <file compressed="true">menu.ui</file>
+    <file compressed="true">about-dialog.ui</file>
   </gresource>
 </gresources>

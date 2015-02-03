@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMessageDialog" id="AboutDialog">
+    <property name="title" translatable="yes">About</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">dialog</property>
+    <property name="buttons">close</property>
+    <property name="text" translatable="yes">xkb-keyboard-indicator 0.1</property>
+    <property name="secondary_text" translatable="yes">Author: Svyatoslav Gryaznov &lt;nightuser@ya.ru&gt;</property>
+  </object>
+</interface>

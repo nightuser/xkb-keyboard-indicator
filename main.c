@@ -1,6 +1,5 @@
 #include <string.h>
 #include <glib.h>
-#include <glib-object.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 #include <libxklavier/xklavier.h>
@@ -49,13 +48,12 @@ show_about (G_GNUC_UNUSED GSimpleAction * action,
             G_GNUC_UNUSED GVariant * parameter,
             G_GNUC_UNUSED gpointer * user_data)
 {
+  GtkBuilder * dialog_builder;
   GtkWidget * dialog;
 
-  dialog = gtk_message_dialog_new (NULL,
-                                   GTK_DIALOG_DESTROY_WITH_PARENT,
-                                   GTK_MESSAGE_INFO,
-                                   GTK_BUTTONS_CLOSE,
-                                   "xkb-keyboard-indicator 0.1\nAuthor: Svyatoslav Gryaznov <nightuser@ya.ru>");
+  dialog_builder = gtk_builder_new_from_resource ("/ru/nightuser/xki/about-dialog.ui");
+  dialog = GTK_WIDGET (gtk_builder_get_object (dialog_builder,
+                                             "AboutDialog"));
 
   g_signal_connect_swapped (dialog, "response",
                             G_CALLBACK (gtk_widget_destroy),
@@ -113,7 +111,7 @@ main (int argc, char ** argv)
   /* Menu */
   menu_builder = gtk_builder_new_from_resource ("/ru/nightuser/xki/menu.ui");
   menu_model = G_MENU_MODEL (gtk_builder_get_object (menu_builder,
-                                                               "IndicatorPopup"));
+                                                     "IndicatorPopup"));
   menu_actions = g_simple_action_group_new ();
   g_action_map_add_action_entries (G_ACTION_MAP (menu_actions), menu_entries,
                                    G_N_ELEMENTS (menu_entries), NULL);
