@@ -19,6 +19,10 @@ Currently only indicator is avaiable.
 
 ## Usage
 
+Set layouts and options in `/app/xki/` in gsettings (e. g., via dconf-editor).
+
+## Usage (Deprecated)
+
 Set xorg xkb settings via `xorg.conf` of `setxkbmap`.
 
 Example (English and Russian layouts with Caps-toggle):
