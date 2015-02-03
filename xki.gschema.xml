@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="apps.xki" path="/apps/xki/" gettext-domain="xki">
+    <key name="layouts" type="as">
+      <default>["us","fr","ru"]</default>
+      <summary>Layouts</summary>
+      <description>
+        Available XKB layouts
+      </description>
+    </key>
+    <key name="options" type="as">
+      <default>["grp:caps_toggle","grp_led:scroll","compose:menu"]</default>
+      <summary>Options</summary>
+      <description>
+        Available XKB options
+      </description>
+    </key>
+  </schema>
+</schemalist>
