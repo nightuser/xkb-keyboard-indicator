@@ -5,6 +5,18 @@ XKB Keyboard indicator for Unity.
 
 Currently only indicator is avaiable.
 
+## Installation
+
+    # build
+    make
+
+    # copy settings schema
+    sudo sudo cp -f xki.gschema.xml /usr/share/glib-2.0/schemas
+    sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+    #run
+    ./xki
+
 ## Usage
 
 Set xorg xkb settings via `xorg.conf` of `setxkbmap`.
