@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/ru/nightuser/xki">
+    <file compressed="true">menu.ui</file>
+  </gresource>
+</gresources>
