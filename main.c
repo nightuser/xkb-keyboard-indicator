@@ -126,11 +126,13 @@ void
 xkb_config_changed (XklEngine * engine)
 {
   g_message ("Config has been changed! Do something with it.");
-  // todo: reset settings
-  // problem: circular signals; arrays comparison isn't a good idea
-  g_signal_handler_block (engine, xkb_config_changed_handler);
+
+  /* todo: reset settings */
+  /* problem: circular signals; arrays comparison isn't a good idea *.
+
+  /*g_signal_handler_block (engine, xkb_config_changed_handler);
   reset_settings (engine);
-  g_signal_handler_unblock (engine, xkb_config_changed_handler);
+  g_signal_handler_unblock (engine, xkb_config_changed_handler);*/
 }
 
 int
