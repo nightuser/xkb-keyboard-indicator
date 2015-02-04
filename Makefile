@@ -5,8 +5,8 @@ LDFLAGS :=
 PKGCONFIGLIBS := `pkg-config --cflags --libs glib-2.0 gtk+-3.0 libxklavier appindicator3-0.1`
 
 EXECUTABLE := xki
-HEADERS := version.h
-SOURCES := main.c
+HEADERS := about.h settings.h indicator.h global.h version.h
+SOURCES := about.c settings.c indicator.c main.c
 RESOURCES := resources.c
 GRESOURCEFILE := xki.gresource.xml
 
