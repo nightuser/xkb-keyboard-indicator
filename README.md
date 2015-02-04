@@ -1,5 +1,6 @@
 # xkb-keyboard-indicator
-XKB Keyboard indicator for Unity.
+
+XKB Keyboard indicator. Indicator in Unity and KDE and regular systray application in other DE/WM.
 
 ## Status
 
@@ -25,7 +26,7 @@ Use settings dialog to set basic layouts and options.
 
 ### Advanced
 
-Set layouts and options in `/app/xki/` in gsettings (e. g., via dconf-editor).
+Set `layouts` and `options` in `/app/xki/` in gsettings (e. g., via `dconf-editor`).
 
 ## Requirements
 
