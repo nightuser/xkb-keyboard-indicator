@@ -2,17 +2,17 @@
 <schemalist>
   <schema id="apps.xki" path="/apps/xki/" gettext-domain="xki">
     <key name="layouts" type="as">
-      <default>["us","fr","ru"]</default>
+      <default>["us","ru"]</default>
       <summary>Layouts</summary>
       <description>
-        Available XKB layouts
+        XKB layouts
       </description>
     </key>
     <key name="options" type="as">
-      <default>["grp:caps_toggle","grp_led:scroll","compose:menu"]</default>
+      <default>["grp:ctrl_shift_toggle","grp_led:scroll","compose:menu"]</default>
       <summary>Options</summary>
       <description>
-        Available XKB options
+        XKB options
       </description>
     </key>
   </schema>
