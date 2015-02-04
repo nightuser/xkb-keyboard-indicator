@@ -3,7 +3,7 @@ XKB Keyboard indicator for Unity.
 
 ## Status
 
-Currently only indicator is avaiable.
+Currently only indicator and initial settings dialog are available.
 
 ## Installation
 
@@ -18,6 +18,12 @@ Currently only indicator is avaiable.
     ./xki
 
 ## Usage
+
+### Simple
+
+Use settings dialog to set basic layouts and options.
+
+### Advanced
 
 Set layouts and options in `/app/xki/` in gsettings (e. g., via dconf-editor).
 
