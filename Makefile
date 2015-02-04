@@ -2,21 +2,36 @@ CC := gcc
 CFLAGS := -O2 -Wall -Wextra
 LDFLAGS :=
 
+PROJECT := xki
+
 PKGCONFIGLIBS := `pkg-config --cflags --libs glib-2.0 gtk+-3.0 libxklavier appindicator3-0.1`
 
-EXECUTABLE := xki
-HEADERS := about.h settings.h indicator.h global.h version.h
-SOURCES := about.c settings.c indicator.c main.c
-RESOURCES := resources.c
-GRESOURCEFILE := xki.gresource.xml
+SRCDIR := src
+DATADIR := data
+OUTDIR := out
+TARGET := $(OUTDIR)/$(PROJECT)
+HEADERS := $(SRCDIR)/about.h \
+				   $(SRCDIR)/settings.h \
+				   $(SRCDIR)/indicator.h \
+				   $(SRCDIR)/global.h \
+				   $(SRCDIR)/version.h
+SOURCES := $(SRCDIR)/about.c \
+           $(SRCDIR)/settings.c \
+           $(SRCDIR)/indicator.c \
+           $(SRCDIR)/main.c
+RESOURCES := $(OUTDIR)/resources.c
+GRESOURCEFILE := $(DATADIR)/xki.gresource.xml
 
-all: $(EXECUTABLE)
+all: $(TARGET)
 
-$(RESOURCES): $(GRESOURCEFILE) *.ui
-	glib-compile-resources --target=$(RESOURCES) --generate-source --c-name $(GRESOURCEFILE:.gresource.xml=) $(GRESOURCEFILE)
+$(RESOURCES): $(GRESOURCEFILE) $(DATADIR)/*.ui $(OUTDIR)
+	glib-compile-resources --target=$(RESOURCES) --sourcedir=$(DATADIR) --generate-source --c-name $(PROJECT) $(GRESOURCEFILE)
 
-$(EXECUTABLE): $(RESOURCES) $(SOURCES) $(HEADERS)
-	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(RESOURCES) $(SOURCES) $(LDFLAGS) $(PKGCONFIGLIBS)
+$(TARGET): $(RESOURCES) $(SOURCES) $(HEADERS) $(OUTDIR)
+	$(CC) $(CFLAGS) -o $(TARGET) $(RESOURCES) $(SOURCES) $(LDFLAGS) $(PKGCONFIGLIBS)
+
+$(OUTDIR):
+	mkdir -p $(OUTDIR)
 
 clean:
-	rm -f $(EXECUTABLE) $(RESOURCES)
+	rm -rf $(OUTDIR)

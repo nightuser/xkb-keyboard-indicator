@@ -1,3 +1,6 @@
+## Build
+out/*
+
 ## C
 # Object files
 *.o
