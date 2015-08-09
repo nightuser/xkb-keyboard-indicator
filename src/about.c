@@ -1,6 +1,6 @@
 #include "about.h"
 
-#include "version.h"
+#include "config.h"
 
 void
 show_about (G_GNUC_UNUSED GSimpleAction * action,
