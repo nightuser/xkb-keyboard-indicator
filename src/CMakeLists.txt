@@ -8,9 +8,9 @@ set (XKI_SRCS
   indicator.c
   indicator.h
   main.c
-  # resource.c
   settings.c
   settings.h
+  "${PROJECT_BINARY_DIR}/src/resources.c"
   )
 
 configure_file(
@@ -37,3 +37,10 @@ target_link_libraries(${PROJECT_NAME} ${APPINDICATOR_LIBRARIES})
 find_package(LibXKlavier REQUIRED)
 include_directories(${LIBXKLAVIER_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} ${LIBXKLAVIER_LIBRARIES})
+
+add_custom_command(OUTPUT "${PROJECT_BINARY_DIR}/src/resources.c"
+  COMMAND glib-compile-resources --target="${PROJECT_BINARY_DIR}/src/resources.c" --sourcedir="${PROJECT_SOURCE_DIR}/data" --generate-source --c-name ${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/data/xki.gresource.xml"
+  COMMENT "Compiling resources"
+  )
+
+
