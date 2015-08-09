@@ -8,7 +8,7 @@ Currently only indicator and initial settings dialog are available.
 
 ## TODO
 
-[ ] Migrate to CMake from plain old Makefile
+[x] Migrate to CMake from plain old Makefile
 [ ] BUG: Sometimes settings are changed from outside (manual re-applying is needed)
 
 ## Installation
