@@ -1,14 +1,22 @@
 # xkb-keyboard-indicator
 
-XKB Keyboard indicator. Indicator in Unity and KDE and regular systray application in other DE/WM.
+XKB Keyboard indicator. It's indicator in Unity and KDE and regular systray application in other DE/WMs.
 
 ## Status
 
 Currently only indicator and initial settings dialog are available.
 
+## TODO
+
+[ ] Migrate to CMake from plain old Makefile
+[ ] BUG: Sometimes settings are changed from outside (manual re-applying is needed)
+
 ## Installation
 
     # build
+    mkdir build
+    cd build
+    cmake ..
     make
 
     # copy settings schema
@@ -16,7 +24,9 @@ Currently only indicator and initial settings dialog are available.
     sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
     # run
-    ./out/xki
+    ./src/xki
+
+Only manual installation is available at the moment. You may copy `src/xki` to somewhere in your path (e.g. `/usr/local/bin`).
 
 ## Usage
 
@@ -26,13 +36,13 @@ Use settings dialog to set basic layouts and options.
 
 ### Advanced
 
-Set `layouts` and `options` in `/app/xki/` in gsettings (e. g., via `dconf-editor`).
+Set `layouts` and `options` in `/app/xki/` in gsettings (e.g., via `dconf-editor`).
 
 ## Requirements
 
-You need GTK+ 3, GLib, LibXklavier and AppIndicator3-0.1.
+You'll need CMake, GTK+ 3, GLib, LibXklavier and AppIndicator3-0.1.
 
-    sudo apt-get install libgtk-3-dev libglib2.0-dev libxklavier-dev libappindicator3-dev
+    sudo apt-get install cmake libgtk-3-dev libglib2.0-dev libxklavier-dev libappindicator3-dev
 
 ## License
 
