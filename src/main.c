@@ -17,7 +17,7 @@ void
 xkb_state_changed (XklEngine * engine, XklEngineStateChange change,
                    gint group, gboolean G_GNUC_UNUSED restore);
 void
-xkb_config_changed (XklEngine * engine);
+xkb_config_changed (G_GNUC_UNUSED XklEngine * engine);
 
 void
 reset_settings (XklEngine * engine)
@@ -53,7 +53,7 @@ xkb_state_changed (XklEngine * engine, XklEngineStateChange change,
 }
 
 void
-xkb_config_changed (XklEngine * engine)
+xkb_config_changed (G_GNUC_UNUSED XklEngine * engine)
 {
   g_message ("Config has been changed! Do something with it.");
 
@@ -63,6 +63,14 @@ xkb_config_changed (XklEngine * engine)
   /*g_signal_handler_block (engine, xkb_config_changed_handler);
   reset_settings (engine);
   g_signal_handler_unblock (engine, xkb_config_changed_handler);*/
+}
+
+void
+main_quit (G_GNUC_UNUSED GSimpleAction * action,
+           G_GNUC_UNUSED GVariant * parameter,
+           G_GNUC_UNUSED gpointer user_data)
+{
+  gtk_main_quit();
 }
 
 int
