@@ -5,10 +5,10 @@
     <property name="icon_name">help-about</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">xkb-keyboard-indicator</property>
-    <property name="copyright" translatable="yes">Svyatoslav Gryaznov &lt;nightuser@ya.ru&gt;</property>
+    <property name="copyright" translatable="no">Svyatoslav Gryaznov &lt;nightuser@ya.ru&gt;</property>
     <property name="website">http://nightuser.ru/</property>
-    <property name="website_label" translatable="yes">nightuser.ru</property>
+    <property name="website_label" translatable="no">nightuser.ru</property>
     <property name="logo_icon_name"/>
-    <property name="license_type">gpl-2-0</property>
+    <property name="license_type">gpl-3-0</property>
   </object>
 </interface>
