@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="apps.xki" path="/apps/xki/" gettext-domain="xki">
+  <schema id="apps.xki" path="/ru/nightuser/xki/" gettext-domain="xki">
     <key name="layouts" type="as">
       <default>["us","ru"]</default>
       <summary>Layouts</summary>
@@ -9,7 +9,7 @@
       </description>
     </key>
     <key name="options" type="as">
-      <default>["grp:ctrl_shift_toggle","grp_led:scroll","compose:menu"]</default>
+      <default>["grp:alt_shift_toggle","grp_led:scroll","compose:menu"]</default>
       <summary>Options</summary>
       <description>
         XKB options
