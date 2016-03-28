@@ -9,9 +9,9 @@
 #include "settings.h"
 
 static GActionEntry const menu_entries[] = {
-  { "settings", show_settings, NULL, NULL, NULL },
-  { "about", show_about, NULL, NULL, NULL },
-  { "quit", main_quit, NULL, NULL, NULL },
+  { .name = "settings", .activate = show_settings },
+  { .name = "about", .activate = show_about },
+  { .name = "quit", .activate = main_quit },
 };
 
 void

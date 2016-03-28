@@ -7,7 +7,7 @@ update_icon (XklEngine * engine, gint group)
 {
   if (group == -1)
   {
-    group = xkl_engine_get_current_state(engine)->group;
+    group = xkl_engine_get_current_state (engine)->group;
   }
   gchar const ** names = xkl_engine_get_groups_names (engine);
   g_message ("New layout is: %s", names[group]);
@@ -16,7 +16,7 @@ update_icon (XklEngine * engine, gint group)
   gchar * icon_name = g_strconcat ("indicator-keyboard-", name, NULL);
 
   GtkIconTheme * icon_theme = gtk_icon_theme_get_default ();
-  if (gtk_icon_theme_has_icon(icon_theme, icon_name))
+  if (gtk_icon_theme_has_icon (icon_theme, icon_name))
   {
     app_indicator_set_icon (indicator, icon_name);
   }

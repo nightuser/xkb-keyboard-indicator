@@ -4,6 +4,6 @@
 #include <gtk/gtk.h>
 
 void
-show_about (G_GNUC_UNUSED GSimpleAction * action,
-            G_GNUC_UNUSED GVariant * parameter,
-            G_GNUC_UNUSED gpointer user_data);
+show_about (GSimpleAction * action,
+            GVariant * parameter,
+            gpointer user_data);

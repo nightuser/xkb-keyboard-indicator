@@ -13,6 +13,6 @@ gulong xkb_state_changed_handler;
 gulong xkb_config_changed_handler;
 
 void
-main_quit (G_GNUC_UNUSED GSimpleAction * action,
-           G_GNUC_UNUSED GVariant * parameter,
-           G_GNUC_UNUSED gpointer user_data);
+main_quit (GSimpleAction * action,
+           GVariant * parameter,
+           gpointer user_data);
