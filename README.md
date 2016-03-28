@@ -8,8 +8,9 @@ Currently only indicator and initial settings dialog are available.
 
 ## TODO
 
-[x] Migrate to CMake from plain old Makefile
-[ ] BUG: Sometimes settings are changed from outside (manual re-applying is needed)
+- [x] Migrate to CMake from plain old Makefile
+- [x] Add installer
+- [ ] BUG: Sometimes settings are changed from outside (manual re-applying is needed)
 
 ## Installation
 
@@ -19,14 +20,17 @@ Currently only indicator and initial settings dialog are available.
     cmake ..
     make
 
+    # install
+    sudo make install
+
+Or you can install manually:
+
     # copy settings schema
     sudo sudo cp -f data/xki.gschema.xml /usr/share/glib-2.0/schemas
     sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
     # run
     ./src/xki
-
-Only manual installation is available at the moment. You may copy `src/xki` to somewhere in your path (e.g. `/usr/local/bin`).
 
 ## Usage
 
@@ -36,7 +40,7 @@ Use settings dialog to set basic layouts and options.
 
 ### Advanced
 
-Set `layouts` and `options` in `/app/xki/` in gsettings (e.g., via `dconf-editor`).
+Set `layouts` and `options` in `/ru/nightuser/xki/` in gsettings (e.g., via `dconf-editor`).
 
 ## Requirements
 

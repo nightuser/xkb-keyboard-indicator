@@ -43,4 +43,17 @@ add_custom_command(OUTPUT "${PROJECT_BINARY_DIR}/src/resources.c"
   COMMENT "Compiling resources"
   )
 
-
+install(TARGETS ${PROJECT_NAME}
+  RUNTIME DESTINATION bin
+  )
+install(FILES "${CMAKE_SOURCE_DIR}/data/xki.gschema.xml"
+  DESTINATION share/glib-2.0/schemas
+  )
+install(
+  CODE
+  "
+  execute_process(
+    COMMAND glib-compile-schemas \"${CMAKE_INSTALL_PREFIX}/share/glib-2.0/schemas\"
+  )
+  "
+  )
